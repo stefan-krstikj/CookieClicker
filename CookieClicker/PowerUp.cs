@@ -8,6 +8,17 @@ namespace CookieClicker
 {
     abstract class PowerUp
     {
-        float ClicksPerSecond;
+        public float ClicksPerSecond { get; set; }
+        public long Cost { get; set; }
+        public PowerUp(float cps, long cost)
+        {
+            this.ClicksPerSecond = cps;
+            this.Cost = cost;
+        }
+
+        public float getCps()
+        {
+            return this.ClicksPerSecond;
+        }
     }
 }
