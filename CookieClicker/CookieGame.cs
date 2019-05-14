@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Drawing;
 
 namespace CookieClicker
 {
@@ -36,8 +38,14 @@ namespace CookieClicker
             ++CookiesCount;
         }
 
-        public void IncreaseClicksPerSecond(int increaseAmount)
+        public void DrawCookie(Graphics g)
         {
+            Cookie.Draw(g);
+        }
+
+        public void IncreaseClicksPerSecond(float increaseAmount)
+        {
+            Debug.WriteLine("Increasing CPS... + {0}", increaseAmount);
             ClicksPerSecond += increaseAmount;
         }
 
@@ -75,9 +83,10 @@ namespace CookieClicker
 
         public void AddPowerUp(PowerUp powerUp)
         {
+            Debug.Write("Adding powerup... " + powerUp.ToString() + " With CPS: " + powerUp.ClicksPerSecond +" And cost: " + powerUp.Cost+ " \n");
             this.powerUps.Add(powerUp);
             UpdateCounts(powerUp);
-            this.ClicksPerSecond += powerUp.getCps();
+            IncreaseClicksPerSecond(powerUp.ClicksPerSecond);
         }
     }
 }

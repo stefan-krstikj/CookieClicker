@@ -20,5 +20,10 @@ namespace CookieClicker
         {
             return this.ClicksPerSecond;
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

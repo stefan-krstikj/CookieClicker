@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// todo: 
+// change CPS label to show 1 decimal
 
 namespace CookieClicker
 {
@@ -20,7 +22,9 @@ namespace CookieClicker
             InitializeComponent();
             Cookie cookie = new Cookie();
             cookieGame = new CookieGame(cookie);
-            
+            Invalidate(true);
+            tabGame.BackgroundImage = Properties.Resources.bluePattern1;
+            this.DoubleBuffered = true;
         }
 
         public void ClickCookie()
@@ -147,5 +151,12 @@ namespace CookieClicker
         {
             AddGrandma();
         }
+
+        private void tabGame_Paint(object sender, PaintEventArgs e)
+        {
+            this.cookieGame.DrawCookie(e.Graphics);
+        }
+
+
     }
 }

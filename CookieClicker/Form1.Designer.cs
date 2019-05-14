@@ -153,6 +153,7 @@
             this.tabGame.TabIndex = 1;
             this.tabGame.Text = "Game";
             this.tabGame.UseVisualStyleBackColor = true;
+            this.tabGame.Paint += new System.Windows.Forms.PaintEventHandler(this.tabGame_Paint);
             // 
             // btnBuyFinger
             // 
