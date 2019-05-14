@@ -39,22 +39,26 @@
             this.btnQuitGame = new System.Windows.Forms.Button();
             this.btnStartGame = new System.Windows.Forms.Button();
             this.tabGame = new System.Windows.Forms.TabPage();
-            this.btnBuyFinger = new System.Windows.Forms.Button();
-            this.lbFingers = new System.Windows.Forms.Label();
-            this.btnBuyGrandma = new System.Windows.Forms.Button();
-            this.lbGrandmas = new System.Windows.Forms.Label();
             this.btnBuyRobot = new System.Windows.Forms.Button();
             this.lbRobots = new System.Windows.Forms.Label();
+            this.btnBuyGrandma = new System.Windows.Forms.Button();
+            this.lbGrandmas = new System.Windows.Forms.Label();
+            this.btnBuyFinger = new System.Windows.Forms.Button();
+            this.lbFingers = new System.Windows.Forms.Label();
+            this.lbPlusCookie = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabGame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCookieClick
             // 
-            this.btnCookieClick.Location = new System.Drawing.Point(111, 183);
+            this.btnCookieClick.Location = new System.Drawing.Point(254, 4);
+            this.btnCookieClick.Margin = new System.Windows.Forms.Padding(2);
             this.btnCookieClick.Name = "btnCookieClick";
-            this.btnCookieClick.Size = new System.Drawing.Size(115, 45);
+            this.btnCookieClick.Size = new System.Drawing.Size(86, 37);
             this.btnCookieClick.TabIndex = 0;
             this.btnCookieClick.Text = "Cookie";
             this.btnCookieClick.UseVisualStyleBackColor = true;
@@ -63,18 +67,20 @@
             // lbCookies
             // 
             this.lbCookies.AutoSize = true;
-            this.lbCookies.Location = new System.Drawing.Point(108, 81);
+            this.lbCookies.Location = new System.Drawing.Point(81, 66);
+            this.lbCookies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCookies.Name = "lbCookies";
-            this.lbCookies.Size = new System.Drawing.Size(74, 17);
+            this.lbCookies.Size = new System.Drawing.Size(57, 13);
             this.lbCookies.TabIndex = 1;
             this.lbCookies.Text = "Cookies: 0";
             // 
             // lbCPS
             // 
             this.lbCPS.AutoSize = true;
-            this.lbCPS.Location = new System.Drawing.Point(108, 114);
+            this.lbCPS.Location = new System.Drawing.Point(81, 93);
+            this.lbCPS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCPS.Name = "lbCPS";
-            this.lbCPS.Size = new System.Drawing.Size(152, 17);
+            this.lbCPS.Size = new System.Drawing.Size(116, 13);
             this.lbCPS.TabIndex = 2;
             this.lbCPS.Text = "Cookies Per Second: 0";
             // 
@@ -87,10 +93,11 @@
             // 
             this.tabControl.Controls.Add(this.tabMenu);
             this.tabControl.Controls.Add(this.tabGame);
-            this.tabControl.Location = new System.Drawing.Point(12, 12);
+            this.tabControl.Location = new System.Drawing.Point(9, 10);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(802, 477);
+            this.tabControl.Size = new System.Drawing.Size(602, 388);
             this.tabControl.TabIndex = 3;
             // 
             // tabMenu
@@ -98,28 +105,31 @@
             this.tabMenu.Controls.Add(this.btnLoad);
             this.tabMenu.Controls.Add(this.btnQuitGame);
             this.tabMenu.Controls.Add(this.btnStartGame);
-            this.tabMenu.Location = new System.Drawing.Point(4, 25);
+            this.tabMenu.Location = new System.Drawing.Point(4, 22);
+            this.tabMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tabMenu.Name = "tabMenu";
-            this.tabMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMenu.Size = new System.Drawing.Size(794, 448);
+            this.tabMenu.Padding = new System.Windows.Forms.Padding(2);
+            this.tabMenu.Size = new System.Drawing.Size(594, 362);
             this.tabMenu.TabIndex = 0;
             this.tabMenu.Text = "Menu";
             this.tabMenu.UseVisualStyleBackColor = true;
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(310, 209);
+            this.btnLoad.Location = new System.Drawing.Point(232, 170);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(142, 49);
+            this.btnLoad.Size = new System.Drawing.Size(106, 40);
             this.btnLoad.TabIndex = 2;
             this.btnLoad.Text = "Load Game";
             this.btnLoad.UseVisualStyleBackColor = true;
             // 
             // btnQuitGame
             // 
-            this.btnQuitGame.Location = new System.Drawing.Point(310, 279);
+            this.btnQuitGame.Location = new System.Drawing.Point(232, 227);
+            this.btnQuitGame.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuitGame.Name = "btnQuitGame";
-            this.btnQuitGame.Size = new System.Drawing.Size(142, 49);
+            this.btnQuitGame.Size = new System.Drawing.Size(106, 40);
             this.btnQuitGame.TabIndex = 1;
             this.btnQuitGame.Text = "Quit";
             this.btnQuitGame.UseVisualStyleBackColor = true;
@@ -127,9 +137,10 @@
             // 
             // btnStartGame
             // 
-            this.btnStartGame.Location = new System.Drawing.Point(310, 144);
+            this.btnStartGame.Location = new System.Drawing.Point(232, 117);
+            this.btnStartGame.Margin = new System.Windows.Forms.Padding(2);
             this.btnStartGame.Name = "btnStartGame";
-            this.btnStartGame.Size = new System.Drawing.Size(142, 49);
+            this.btnStartGame.Size = new System.Drawing.Size(106, 40);
             this.btnStartGame.TabIndex = 0;
             this.btnStartGame.Text = "Start";
             this.btnStartGame.UseVisualStyleBackColor = true;
@@ -137,6 +148,8 @@
             // 
             // tabGame
             // 
+            this.tabGame.Controls.Add(this.lbPlusCookie);
+            this.tabGame.Controls.Add(this.pictureBox1);
             this.tabGame.Controls.Add(this.btnBuyRobot);
             this.tabGame.Controls.Add(this.lbRobots);
             this.tabGame.Controls.Add(this.btnBuyGrandma);
@@ -146,39 +159,42 @@
             this.tabGame.Controls.Add(this.lbCPS);
             this.tabGame.Controls.Add(this.btnCookieClick);
             this.tabGame.Controls.Add(this.lbCookies);
-            this.tabGame.Location = new System.Drawing.Point(4, 25);
+            this.tabGame.Location = new System.Drawing.Point(4, 22);
+            this.tabGame.Margin = new System.Windows.Forms.Padding(2);
             this.tabGame.Name = "tabGame";
-            this.tabGame.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGame.Size = new System.Drawing.Size(794, 448);
+            this.tabGame.Padding = new System.Windows.Forms.Padding(2);
+            this.tabGame.Size = new System.Drawing.Size(594, 362);
             this.tabGame.TabIndex = 1;
             this.tabGame.Text = "Game";
             this.tabGame.UseVisualStyleBackColor = true;
-            this.tabGame.Paint += new System.Windows.Forms.PaintEventHandler(this.tabGame_Paint);
+            this.tabGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabGame_MouseClick);
             // 
-            // btnBuyFinger
+            // btnBuyRobot
             // 
-            this.btnBuyFinger.Location = new System.Drawing.Point(612, 81);
-            this.btnBuyFinger.Name = "btnBuyFinger";
-            this.btnBuyFinger.Size = new System.Drawing.Size(122, 31);
-            this.btnBuyFinger.TabIndex = 4;
-            this.btnBuyFinger.Text = "Finger = 10";
-            this.btnBuyFinger.UseVisualStyleBackColor = true;
-            this.btnBuyFinger.Click += new System.EventHandler(this.btnBuyFinger_Click);
+            this.btnBuyRobot.Location = new System.Drawing.Point(459, 210);
+            this.btnBuyRobot.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuyRobot.Name = "btnBuyRobot";
+            this.btnBuyRobot.Size = new System.Drawing.Size(92, 25);
+            this.btnBuyRobot.TabIndex = 8;
+            this.btnBuyRobot.Text = "Robot = 200";
+            this.btnBuyRobot.UseVisualStyleBackColor = true;
             // 
-            // lbFingers
+            // lbRobots
             // 
-            this.lbFingers.AutoSize = true;
-            this.lbFingers.Location = new System.Drawing.Point(609, 61);
-            this.lbFingers.Name = "lbFingers";
-            this.lbFingers.Size = new System.Drawing.Size(71, 17);
-            this.lbFingers.TabIndex = 3;
-            this.lbFingers.Text = "Fingers: 0";
+            this.lbRobots.AutoSize = true;
+            this.lbRobots.Location = new System.Drawing.Point(457, 193);
+            this.lbRobots.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbRobots.Name = "lbRobots";
+            this.lbRobots.Size = new System.Drawing.Size(53, 13);
+            this.lbRobots.TabIndex = 7;
+            this.lbRobots.Text = "Robots: 0";
             // 
             // btnBuyGrandma
             // 
-            this.btnBuyGrandma.Location = new System.Drawing.Point(612, 168);
+            this.btnBuyGrandma.Location = new System.Drawing.Point(459, 136);
+            this.btnBuyGrandma.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuyGrandma.Name = "btnBuyGrandma";
-            this.btnBuyGrandma.Size = new System.Drawing.Size(122, 31);
+            this.btnBuyGrandma.Size = new System.Drawing.Size(92, 25);
             this.btnBuyGrandma.TabIndex = 6;
             this.btnBuyGrandma.Text = "Grandma = 50";
             this.btnBuyGrandma.UseVisualStyleBackColor = true;
@@ -187,42 +203,68 @@
             // lbGrandmas
             // 
             this.lbGrandmas.AutoSize = true;
-            this.lbGrandmas.Location = new System.Drawing.Point(609, 148);
+            this.lbGrandmas.Location = new System.Drawing.Point(457, 120);
+            this.lbGrandmas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbGrandmas.Name = "lbGrandmas";
-            this.lbGrandmas.Size = new System.Drawing.Size(90, 17);
+            this.lbGrandmas.Size = new System.Drawing.Size(67, 13);
             this.lbGrandmas.TabIndex = 5;
             this.lbGrandmas.Text = "Grandmas: 0";
             // 
-            // btnBuyRobot
+            // btnBuyFinger
             // 
-            this.btnBuyRobot.Location = new System.Drawing.Point(612, 258);
-            this.btnBuyRobot.Name = "btnBuyRobot";
-            this.btnBuyRobot.Size = new System.Drawing.Size(122, 31);
-            this.btnBuyRobot.TabIndex = 8;
-            this.btnBuyRobot.Text = "Robot = 200";
-            this.btnBuyRobot.UseVisualStyleBackColor = true;
+            this.btnBuyFinger.Location = new System.Drawing.Point(459, 66);
+            this.btnBuyFinger.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuyFinger.Name = "btnBuyFinger";
+            this.btnBuyFinger.Size = new System.Drawing.Size(92, 25);
+            this.btnBuyFinger.TabIndex = 4;
+            this.btnBuyFinger.Text = "Finger = 10";
+            this.btnBuyFinger.UseVisualStyleBackColor = true;
+            this.btnBuyFinger.Click += new System.EventHandler(this.btnBuyFinger_Click);
             // 
-            // lbRobots
+            // lbFingers
             // 
-            this.lbRobots.AutoSize = true;
-            this.lbRobots.Location = new System.Drawing.Point(609, 238);
-            this.lbRobots.Name = "lbRobots";
-            this.lbRobots.Size = new System.Drawing.Size(69, 17);
-            this.lbRobots.TabIndex = 7;
-            this.lbRobots.Text = "Robots: 0";
+            this.lbFingers.AutoSize = true;
+            this.lbFingers.Location = new System.Drawing.Point(457, 50);
+            this.lbFingers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbFingers.Name = "lbFingers";
+            this.lbFingers.Size = new System.Drawing.Size(53, 13);
+            this.lbFingers.TabIndex = 3;
+            this.lbFingers.Text = "Fingers: 0";
+            // 
+            // lbPlusCookie
+            // 
+            this.lbPlusCookie.AutoSize = true;
+            this.lbPlusCookie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlusCookie.Location = new System.Drawing.Point(159, 146);
+            this.lbPlusCookie.Name = "lbPlusCookie";
+            this.lbPlusCookie.Size = new System.Drawing.Size(75, 15);
+            this.lbPlusCookie.TabIndex = 9;
+            this.lbPlusCookie.Text = "+1 Cookie!";
+            this.lbPlusCookie.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(60, 120);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 174);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 505);
+            this.ClientSize = new System.Drawing.Size(620, 410);
             this.Controls.Add(this.tabControl);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.tabControl.ResumeLayout(false);
             this.tabMenu.ResumeLayout(false);
             this.tabGame.ResumeLayout(false);
             this.tabGame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,6 +287,8 @@
         private System.Windows.Forms.Label lbGrandmas;
         private System.Windows.Forms.Button btnBuyRobot;
         private System.Windows.Forms.Label lbRobots;
+        private System.Windows.Forms.Label lbPlusCookie;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,28 +11,55 @@ using System.Windows.Forms;
 
 // todo: 
 // change CPS label to show 1 decimal
+// add progress bar with "Maximum power" 
 
 namespace CookieClicker
 {
     public partial class Form1 : Form
     {
         CookieGame cookieGame { get; set; }
+        Graphics g { get; set; }
 
         public Form1()
         {
             InitializeComponent();
-            Cookie cookie = new Cookie();
-            cookieGame = new CookieGame(cookie);
-            Invalidate(true);
-            tabGame.BackgroundImage = Properties.Resources.bluePattern1;
+
+            // doubleBuffered true & new Graphics from current tab
             this.DoubleBuffered = true;
+            this.g = pictureBox1.CreateGraphics();
+
+            // create CookieGame object
+            Cookie cookie = new Cookie();
+            cookieGame = new CookieGame(cookie, this.g);
+            cookieGame.StartGame();
+            Invalidate(true);
+            pictureBox1.Image = Properties.Resources.cookie1_transparent;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            lbPlusCookie.Parent = pictureBox1;
+            lbPlusCookie.BackColor = Color.Transparent;
         }
 
-        public void ClickCookie()
+
+        public void ClickCookie() 
         {
             cookieGame.ClickCookie();
             UpdateCookiesLabel();
             CheckEnabled();
+            // todo: Show +1 Cookie! toast notification
+            Rectangle cookieRectangle = cookieGame.Cookie.rectangle;
+            lbPlusCookie.Visible = false;
+
+            Random rnd = new Random();
+
+            int rndX = rnd.Next(cookieRectangle.X, cookieRectangle.X + cookieRectangle.Width);
+            int rndY = rnd.Next(cookieRectangle.Y, cookieRectangle.Y + cookieRectangle.Height);
+
+            Point randomPt = new Point(rndX, rndY);
+            lbPlusCookie.Location = randomPt;
+            lbPlusCookie.Visible = true;
+
+            cookieGame.DrawCookieDown();
         }
 
         public void UpdateFingerLabel()
@@ -152,11 +180,27 @@ namespace CookieClicker
             AddGrandma();
         }
 
-        private void tabGame_Paint(object sender, PaintEventArgs e)
+
+
+        private void tabGame_MouseClick(object sender, MouseEventArgs e)
         {
-            this.cookieGame.DrawCookie(e.Graphics);
+            if(cookieGame.Cookie.IsCookiePressed(e.Location))
+                this.cookieGame.DrawCookieDown();
+            ClickCookie();
         }
 
+
+        private void tabGame_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.cookieGame.DrawCookieUp();
+        }
+
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            // set background
+            tabGame.BackgroundImage = Properties.Resources.bluePattern1;
+        }
 
     }
 }

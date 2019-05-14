@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Drawing;
+using System.Reflection.Emit;
 
 namespace CookieClicker
 {
@@ -18,29 +19,35 @@ namespace CookieClicker
         public long Fingers { get; set; }
         public long Grandmas { get; set; }
         public long Robots { get; set; }
+        public Boolean CookieClickedFlag { get; set; }
+        public Graphics g { get; set; }
 
-        public CookieGame(Cookie cookie)
+        public CookieGame(Cookie cookie, Graphics g)
         {
 
             // todo: change these to 'StartGame'
             this.Cookie = cookie;
-            ClicksPerSecond = 1;
-            CookiesCount = 0;
-            Fingers = 0;
-            Grandmas = 0;
-            Robots = 0;
             powerUps = new List<PowerUp>();
+            this.g = g;
+            StartGame();
         }
           
         // method for on cookie click
         public void ClickCookie()
         {
             ++CookiesCount;
+
         }
 
-        public void DrawCookie(Graphics g)
+        public void DrawCookieDown()
         {
-            Cookie.Draw(g);
+            Cookie.DrawSmall(g);
+        }
+
+        public void DrawCookieUp()
+        {
+            Debug.WriteLine("CookieGame: DrawCookieUp()");
+            Cookie.DrawBig(g);
         }
 
         public void IncreaseClicksPerSecond(float increaseAmount)
@@ -56,6 +63,12 @@ namespace CookieClicker
 
         public void StartGame()
         {
+            ClicksPerSecond = Constants.CLICKS_PER_SECOND;
+            CookiesCount = 0;
+            Fingers = 0;
+            Grandmas = 0;
+            Robots = 0;
+            CookieClickedFlag = false;
 
         }
 

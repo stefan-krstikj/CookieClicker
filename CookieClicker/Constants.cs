@@ -8,8 +8,10 @@ namespace CookieClicker
 {
     class Constants
     {
-        public static int COOKIE_X = 110;
-        public static int COOKIE_Y = 180;
+        public static int CLICKS_PER_SECOND = 1;
+
+        public static int COOKIE_X = 150;
+        public static int COOKIE_Y = 220;
 
         public static float FINGER_CPS = 0.1f;
         public static long FINGER_COST = 10;
