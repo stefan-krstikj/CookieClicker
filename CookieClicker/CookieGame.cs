@@ -20,15 +20,13 @@ namespace CookieClicker
         public long Grandmas { get; set; }
         public long Robots { get; set; }
         public Boolean CookieClickedFlag { get; set; }
-        public Graphics g { get; set; }
 
-        public CookieGame(Cookie cookie, Graphics g)
+        public CookieGame(Cookie cookie)
         {
 
             // todo: change these to 'StartGame'
             this.Cookie = cookie;
             powerUps = new List<PowerUp>();
-            this.g = g;
             StartGame();
         }
           
@@ -36,18 +34,18 @@ namespace CookieClicker
         public void ClickCookie()
         {
             ++CookiesCount;
-
         }
 
+        // todo: remove drawing methods
         public void DrawCookieDown()
         {
-            Cookie.DrawSmall(g);
+           // Cookie.DrawSmall(gSmall);
         }
 
         public void DrawCookieUp()
         {
             Debug.WriteLine("CookieGame: DrawCookieUp()");
-            Cookie.DrawBig(g);
+           // Cookie.DrawBig(gBig);
         }
 
         public void IncreaseClicksPerSecond(float increaseAmount)

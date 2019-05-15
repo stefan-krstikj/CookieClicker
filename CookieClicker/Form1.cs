@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 // todo: 
 // change CPS label to show 1 decimal
 // add progress bar with "Maximum power" 
@@ -18,26 +19,28 @@ namespace CookieClicker
     public partial class Form1 : Form
     {
         CookieGame cookieGame { get; set; }
-        Graphics g { get; set; }
 
         public Form1()
         {
             InitializeComponent();
 
+            // set background
+            this.tabGame.BackgroundImage = Properties.Resources.bluePattern1;
+
             // doubleBuffered true & new Graphics from current tab
             this.DoubleBuffered = true;
-            this.g = pictureBox1.CreateGraphics();
 
             // create CookieGame object
             Cookie cookie = new Cookie();
-            cookieGame = new CookieGame(cookie, this.g);
+            cookieGame = new CookieGame(cookie);
             cookieGame.StartGame();
             Invalidate(true);
-            pictureBox1.Image = Properties.Resources.cookie1_transparent;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            lbPlusCookie.Parent = pictureBox1;
-            lbPlusCookie.BackColor = Color.Transparent;
+            pbCookie.Image = Properties.Resources.cookie1_transparent_small;
+            pbCookie.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            lbPlusCookie_1.Parent = pbCookie;
+            lbPlusCookie_1.BackColor = Color.Transparent;
         }
 
 
@@ -46,20 +49,44 @@ namespace CookieClicker
             cookieGame.ClickCookie();
             UpdateCookiesLabel();
             CheckEnabled();
+            UpdatePlusCookieLabel();
+        }
+
+        public void ClickCookieDown()
+        {
+            pbCookie.SizeMode = PictureBoxSizeMode.Zoom;
+        }
+
+        public void ClickCookieUp()
+        {
+            pbCookie.SizeMode = PictureBoxSizeMode.StretchImage;
+            ClickCookie();
+        }
+
+        public Point GeneratePointForLabel()
+        {
             // todo: Show +1 Cookie! toast notification
-            Rectangle cookieRectangle = cookieGame.Cookie.rectangle;
-            lbPlusCookie.Visible = false;
+            Rectangle cookieRectangle = pbCookie.Bounds;
+            lbPlusCookie_1.Visible = false;
 
             Random rnd = new Random();
 
-            int rndX = rnd.Next(cookieRectangle.X, cookieRectangle.X + cookieRectangle.Width);
-            int rndY = rnd.Next(cookieRectangle.Y, cookieRectangle.Y + cookieRectangle.Height);
+            int rndX = rnd.Next(0, cookieRectangle.Width - 70);
+            int rndY = rnd.Next(0, cookieRectangle.Height - 40);
 
-            Point randomPt = new Point(rndX, rndY);
-            lbPlusCookie.Location = randomPt;
-            lbPlusCookie.Visible = true;
+            // Debug.WriteLine("UpdatePlusCookieLabel: " + cookieRectangle.ToString());
+            // Debug.WriteLine("rndX: " + rndX + " rndY: " + rndY);
+            return new Point(rndX, rndY);
+        }
 
-            cookieGame.DrawCookieDown();
+        public void UpdatePlusCookieLabel()
+        {
+            Point randomPt = GeneratePointForLabel();
+
+
+            lbPlusCookie_1.Location = randomPt;
+            lbPlusCookie_1.Visible = true;
+            
         }
 
         public void UpdateFingerLabel()
@@ -133,12 +160,6 @@ namespace CookieClicker
                 btnBuyRobot.Enabled = true;
         }
 
-
-        private void btnCookieClick_Click(object sender, EventArgs e)
-        {
-            ClickCookie();
-        }
-
         private void timeCookiePerSecond_Tick(object sender, EventArgs e)
         {
             cookieGame.UpdateCookies();
@@ -181,26 +202,30 @@ namespace CookieClicker
         }
 
 
-
-        private void tabGame_MouseClick(object sender, MouseEventArgs e)
-        {
-            if(cookieGame.Cookie.IsCookiePressed(e.Location))
-                this.cookieGame.DrawCookieDown();
-            ClickCookie();
-        }
-
-
-        private void tabGame_MouseUp(object sender, MouseEventArgs e)
-        {
-            this.cookieGame.DrawCookieUp();
-        }
-
-
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            // set background
-            tabGame.BackgroundImage = Properties.Resources.bluePattern1;
+            
+           
         }
 
+        private void pbCookie_MouseDown(object sender, MouseEventArgs e)
+        {
+            ClickCookieDown();
+        }
+
+        private void pbCookie_MouseUp(object sender, MouseEventArgs e)
+        {
+            ClickCookieUp();
+        }
+
+        private void timeLabelDisappear_Tick(object sender, EventArgs e)
+        { 
+             lbPlusCookie_1.Visible = false;
+        }
+
+        private void lbPlusCookie_Click(object sender, EventArgs e)
+        {
+            ClickCookieDown();
+        }
     }
 }

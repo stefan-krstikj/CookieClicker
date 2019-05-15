@@ -12,7 +12,6 @@ namespace CookieClicker
     {
         public Image image { get; set; }
         public Point point { get; set; }
-        public Rectangle rectangle { get; set; }
         public Cookie()
         {
             image = Properties.Resources.cookie1_transparent;
@@ -26,7 +25,7 @@ namespace CookieClicker
             int x = point.X - (imgWidth / 2);
             int y = point.Y - (imgHeight / 2);
             g.DrawImage(image, x, y, imgWidth, imgHeight);
-            Debug.WriteLine(x + y + imgWidth + imgHeight);
+           // Debug.WriteLine(x + y + imgWidth + imgHeight);
         }
 
         public void DrawSmall(Graphics g)
@@ -36,9 +35,7 @@ namespace CookieClicker
             int x = point.X - (imgWidth);
             int y = point.Y - (int)( imgHeight * 1.5);
             g.DrawImage(image, x, y, imgWidth, imgHeight);
-            Debug.WriteLine("X: " + x + " Y: " + y + " WID: " + imgWidth + " HEI: "+ imgHeight);
-            this.rectangle = new Rectangle(x, y+imgWidth/2, imgWidth, imgHeight);
-            Debug.WriteLine("Printing rectangle: " + this.rectangle.ToString());
+            //Debug.WriteLine("X: " + x + " Y: " + y + " WID: " + imgWidth + " HEI: "+ imgHeight);
         }
 
         public Boolean IsCookiePressed(Point p)

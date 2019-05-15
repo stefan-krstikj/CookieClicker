@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnCookieClick = new System.Windows.Forms.Button();
             this.lbCookies = new System.Windows.Forms.Label();
             this.lbCPS = new System.Windows.Forms.Label();
             this.timeCookiePerSecond = new System.Windows.Forms.Timer(this.components);
@@ -39,30 +38,20 @@
             this.btnQuitGame = new System.Windows.Forms.Button();
             this.btnStartGame = new System.Windows.Forms.Button();
             this.tabGame = new System.Windows.Forms.TabPage();
+            this.pbCookie = new System.Windows.Forms.PictureBox();
+            this.lbPlusCookie_1 = new System.Windows.Forms.Label();
             this.btnBuyRobot = new System.Windows.Forms.Button();
             this.lbRobots = new System.Windows.Forms.Label();
             this.btnBuyGrandma = new System.Windows.Forms.Button();
             this.lbGrandmas = new System.Windows.Forms.Label();
             this.btnBuyFinger = new System.Windows.Forms.Button();
             this.lbFingers = new System.Windows.Forms.Label();
-            this.lbPlusCookie = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timeLabelDisappear = new System.Windows.Forms.Timer(this.components);
             this.tabControl.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabGame.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCookie)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnCookieClick
-            // 
-            this.btnCookieClick.Location = new System.Drawing.Point(254, 4);
-            this.btnCookieClick.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCookieClick.Name = "btnCookieClick";
-            this.btnCookieClick.Size = new System.Drawing.Size(86, 37);
-            this.btnCookieClick.TabIndex = 0;
-            this.btnCookieClick.Text = "Cookie";
-            this.btnCookieClick.UseVisualStyleBackColor = true;
-            this.btnCookieClick.Click += new System.EventHandler(this.btnCookieClick_Click);
             // 
             // lbCookies
             // 
@@ -148,8 +137,8 @@
             // 
             // tabGame
             // 
-            this.tabGame.Controls.Add(this.lbPlusCookie);
-            this.tabGame.Controls.Add(this.pictureBox1);
+            this.tabGame.Controls.Add(this.lbPlusCookie_1);
+            this.tabGame.Controls.Add(this.pbCookie);
             this.tabGame.Controls.Add(this.btnBuyRobot);
             this.tabGame.Controls.Add(this.lbRobots);
             this.tabGame.Controls.Add(this.btnBuyGrandma);
@@ -157,7 +146,6 @@
             this.tabGame.Controls.Add(this.btnBuyFinger);
             this.tabGame.Controls.Add(this.lbFingers);
             this.tabGame.Controls.Add(this.lbCPS);
-            this.tabGame.Controls.Add(this.btnCookieClick);
             this.tabGame.Controls.Add(this.lbCookies);
             this.tabGame.Location = new System.Drawing.Point(4, 22);
             this.tabGame.Margin = new System.Windows.Forms.Padding(2);
@@ -167,7 +155,28 @@
             this.tabGame.TabIndex = 1;
             this.tabGame.Text = "Game";
             this.tabGame.UseVisualStyleBackColor = true;
-            this.tabGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabGame_MouseClick);
+            // 
+            // pbCookie
+            // 
+            this.pbCookie.Location = new System.Drawing.Point(84, 136);
+            this.pbCookie.Name = "pbCookie";
+            this.pbCookie.Size = new System.Drawing.Size(185, 174);
+            this.pbCookie.TabIndex = 12;
+            this.pbCookie.TabStop = false;
+            this.pbCookie.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbCookie_MouseDown);
+            this.pbCookie.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbCookie_MouseUp);
+            // 
+            // lbPlusCookie_1
+            // 
+            this.lbPlusCookie_1.AutoSize = true;
+            this.lbPlusCookie_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlusCookie_1.Location = new System.Drawing.Point(99, 159);
+            this.lbPlusCookie_1.Name = "lbPlusCookie_1";
+            this.lbPlusCookie_1.Size = new System.Drawing.Size(75, 15);
+            this.lbPlusCookie_1.TabIndex = 9;
+            this.lbPlusCookie_1.Text = "+1 Cookie!";
+            this.lbPlusCookie_1.Visible = false;
+            this.lbPlusCookie_1.Click += new System.EventHandler(this.lbPlusCookie_Click);
             // 
             // btnBuyRobot
             // 
@@ -231,24 +240,11 @@
             this.lbFingers.TabIndex = 3;
             this.lbFingers.Text = "Fingers: 0";
             // 
-            // lbPlusCookie
+            // timeLabelDisappear
             // 
-            this.lbPlusCookie.AutoSize = true;
-            this.lbPlusCookie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPlusCookie.Location = new System.Drawing.Point(159, 146);
-            this.lbPlusCookie.Name = "lbPlusCookie";
-            this.lbPlusCookie.Size = new System.Drawing.Size(75, 15);
-            this.lbPlusCookie.TabIndex = 9;
-            this.lbPlusCookie.Text = "+1 Cookie!";
-            this.lbPlusCookie.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(60, 120);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(185, 174);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.timeLabelDisappear.Enabled = true;
+            this.timeLabelDisappear.Interval = 350;
+            this.timeLabelDisappear.Tick += new System.EventHandler(this.timeLabelDisappear_Tick);
             // 
             // Form1
             // 
@@ -264,14 +260,12 @@
             this.tabMenu.ResumeLayout(false);
             this.tabGame.ResumeLayout(false);
             this.tabGame.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCookie)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCookieClick;
         private System.Windows.Forms.Label lbCookies;
         private System.Windows.Forms.Label lbCPS;
         private System.Windows.Forms.Timer timeCookiePerSecond;
@@ -287,8 +281,9 @@
         private System.Windows.Forms.Label lbGrandmas;
         private System.Windows.Forms.Button btnBuyRobot;
         private System.Windows.Forms.Label lbRobots;
-        private System.Windows.Forms.Label lbPlusCookie;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbPlusCookie_1;
+        private System.Windows.Forms.PictureBox pbCookie;
+        private System.Windows.Forms.Timer timeLabelDisappear;
     }
 }
 
