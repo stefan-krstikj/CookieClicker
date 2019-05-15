@@ -18,3 +18,13 @@ C:\Users\Stefa\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.
 C:\Users\Stefa\source\repos\CookieClicker\CookieClicker\bin\Debug\CookieClicker.exe.config
 C:\Users\Stefa\source\repos\CookieClicker\CookieClicker\bin\Debug\CookieClicker.exe
 C:\Users\Stefa\source\repos\CookieClicker\CookieClicker\bin\Debug\CookieClicker.pdb
+C:\Users\StefanASUS\source\repos\CookieClicker\CookieClicker\bin\Debug\CookieClicker.exe.config
+C:\Users\StefanASUS\source\repos\CookieClicker\CookieClicker\bin\Debug\CookieClicker.exe
+C:\Users\StefanASUS\source\repos\CookieClicker\CookieClicker\bin\Debug\CookieClicker.pdb
+C:\Users\StefanASUS\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csprojAssemblyReference.cache
+C:\Users\StefanASUS\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.Form1.resources
+C:\Users\StefanASUS\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.Properties.Resources.resources
+C:\Users\StefanASUS\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.GenerateResource.cache
+C:\Users\StefanASUS\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.CoreCompileInputs.cache
+C:\Users\StefanASUS\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.exe
+C:\Users\StefanASUS\source\repos\CookieClicker\CookieClicker\obj\Debug\CookieClicker.pdb

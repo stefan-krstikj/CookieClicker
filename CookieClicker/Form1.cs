@@ -13,6 +13,7 @@ using System.Windows.Forms;
 // todo: 
 // change CPS label to show 1 decimal
 // add progress bar with "Maximum power" 
+// add several Labels
 
 namespace CookieClicker
 {
@@ -30,6 +31,13 @@ namespace CookieClicker
             // doubleBuffered true & new Graphics from current tab
             this.DoubleBuffered = true;
 
+            // create a cookie object
+            CreateCookie();
+            
+        }
+
+        public void CreateCookie()
+        {
             // create CookieGame object
             Cookie cookie = new Cookie();
             cookieGame = new CookieGame(cookie);
@@ -42,7 +50,6 @@ namespace CookieClicker
             lbPlusCookie_1.Parent = pbCookie;
             lbPlusCookie_1.BackColor = Color.Transparent;
         }
-
 
         public void ClickCookie() 
         {
@@ -62,6 +69,7 @@ namespace CookieClicker
             pbCookie.SizeMode = PictureBoxSizeMode.StretchImage;
             ClickCookie();
         }
+
 
         public Point GeneratePointForLabel()
         {
@@ -142,7 +150,7 @@ namespace CookieClicker
 
         public void CheckEnabled()
         {
-            // todo: Check if we have enough cookies to buy Finger / Grandma
+           
             if (cookieGame.CookiesCount < Constants.GRANDMA_COST)
                 btnBuyGrandma.Enabled = false;
             else
@@ -191,6 +199,13 @@ namespace CookieClicker
             UpdateLabels();
         }
 
+        public void AddRobot()
+        {
+            cookieGame.AddPowerUp(new Robot());
+            CheckEnabled();
+            UpdateLabels();
+        }
+
         private void btnBuyFinger_Click(object sender, EventArgs e)
         {
             AddFinger();
@@ -199,6 +214,11 @@ namespace CookieClicker
         private void btnBuyGrandma_Click(object sender, EventArgs e)
         {
             AddGrandma();
+        }
+
+        private void btnBuyRobot_Click(object sender, EventArgs e)
+        {
+            AddRobot();
         }
 
 
@@ -227,5 +247,7 @@ namespace CookieClicker
         {
             ClickCookieDown();
         }
+
+
     }
 }
