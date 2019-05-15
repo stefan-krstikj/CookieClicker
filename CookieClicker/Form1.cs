@@ -28,7 +28,7 @@ namespace CookieClicker
             // set background
             this.tabGame.BackgroundImage = Properties.Resources.bluePattern1;
 
-            // doubleBuffered true & new Graphics from current tab
+            // doubleBuffered true
             this.DoubleBuffered = true;
 
             // create a cookie object
@@ -44,33 +44,59 @@ namespace CookieClicker
             cookieGame.StartGame();
             Invalidate(true);
 
+            // set PictureBox image to cookie image
             pbCookie.Image = Properties.Resources.cookie1_transparent_small;
+            // set PictureBox SizeMode to stretch image (to fill up the picturebox)
             pbCookie.SizeMode = PictureBoxSizeMode.StretchImage;
 
+            // set needed label info for transparency
             lbPlusCookie_1.Parent = pbCookie;
             lbPlusCookie_1.BackColor = Color.Transparent;
         }
 
+
+        /// <summary>
+        /// Register a Cookie Click
+        /// <para>+1 cookie</para>
+        /// </summary>
         public void ClickCookie() 
         {
+            // inform cookieGame object that cookie is clicked
             cookieGame.ClickCookie();
+
+            // update labels
             UpdateCookiesLabel();
-            CheckEnabled();
             UpdatePlusCookieLabel();
+
+            // check if we have enough cookies, to enable / disable buy buttons
+            CheckEnabled();       
         }
 
+        /// <summary>
+        /// Cookie Clicked Down effect
+        /// <para>Changes the PictureBox SizeMode to Zoom</para>
+        /// </summary>
         public void ClickCookieDown()
         {
+            // Changing the Picture Box SizeMode gives a 'click' effect
             pbCookie.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
+
+        /// <summary>
+        /// Cookie Clicked Up effect
+        /// <para>Changes the PictureBox SizeMode to StretchImage</para>
+        /// </summary>
         public void ClickCookieUp()
         {
             pbCookie.SizeMode = PictureBoxSizeMode.StretchImage;
             ClickCookie();
         }
 
-
+        /// <summary>
+        /// Generates a Random Point location in the range of the PictureBox Rectangle
+        /// </summary>
+        /// <returns></returns>
         public Point GeneratePointForLabel()
         {
             // todo: Show +1 Cookie! toast notification
@@ -82,11 +108,12 @@ namespace CookieClicker
             int rndX = rnd.Next(0, cookieRectangle.Width - 70);
             int rndY = rnd.Next(0, cookieRectangle.Height - 40);
 
-            // Debug.WriteLine("UpdatePlusCookieLabel: " + cookieRectangle.ToString());
-            // Debug.WriteLine("rndX: " + rndX + " rndY: " + rndY);
             return new Point(rndX, rndY);
         }
 
+        /// <summary>
+        /// Update the "+1 Cookie!" label that shows on top of the Cookie when clicked
+        /// </summary>
         public void UpdatePlusCookieLabel()
         {
             Point randomPt = GeneratePointForLabel();
@@ -97,32 +124,50 @@ namespace CookieClicker
             
         }
 
+        /// <summary>
+        /// Update the Label for number of Fingers owned
+        /// </summary>
         public void UpdateFingerLabel()
         {
             this.lbFingers.Text = String.Format("Fingers: {0}", cookieGame.Fingers);
         }
 
+        /// <summary>
+        /// Update the Label for number of Grandmas owned
+        /// </summary>
         public void UpdateGrandmaLabel()
         {
             this.lbGrandmas.Text = String.Format("Grandmas: {0}", cookieGame.Grandmas);
 
         }
 
+        /// <summary>
+        /// Update the Label for number of Robots owned
+        /// </summary>
         public void UpdateRobotLabel()
         {
             this.lbRobots.Text = String.Format("Robots: {0}", cookieGame.Grandmas);
         }
 
+        /// <summary>
+        /// Update the Label for number of Cookies in inventory
+        /// </summary>
         public void UpdateCookiesLabel()
         {
             this.lbCookies.Text = String.Format("Cookies: {0}", cookieGame.CookiesCount);
         }
 
+        /// <summary>
+        /// Update the Label for current Clicks Per Second
+        /// </summary>
         public void UpdateCPSLabel()
         {
-            this.lbCPS.Text = String.Format("Cookies Per Second: {0}", cookieGame.ClicksPerSecond);
+            this.lbCPS.Text = String.Format("Cookies Per Second: {0:0.0}", cookieGame.ClicksPerSecond);
         }
 
+        /// <summary>
+        /// Update All labels
+        /// </summary>
         public void UpdateLabels()
         {
             this.UpdateCookiesLabel();
@@ -132,6 +177,9 @@ namespace CookieClicker
             this.UpdateRobotLabel();
         }
 
+        /// <summary>
+        /// Check Enabled Buttons, reset Labels, start Timer & select Game tab
+        /// </summary>
         public void Start()
         {
             CheckEnabled();
@@ -143,11 +191,18 @@ namespace CookieClicker
             tabControl.SelectedTab = tabGame;
         }
 
+        /// <summary>
+        /// Close the Form
+        /// <para>Calls this.Close()</para>
+        /// </summary>
         public void Quit()
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Check if current Cookie count in inventory is enough to purchase a PowerUp. Enable / Disable buttons as needed
+        /// </summary>
         public void CheckEnabled()
         {
            
@@ -168,11 +223,45 @@ namespace CookieClicker
                 btnBuyRobot.Enabled = true;
         }
 
+        /// <summary>
+        /// Increase CookieCount every second
+        /// <para>Clicks Per Second timer with 1000ms interval</para>
+        /// </summary>
         private void timeCookiePerSecond_Tick(object sender, EventArgs e)
         {
             cookieGame.UpdateCookies();
             UpdateLabels();
             CheckEnabled();
+        }
+
+        /// <summary>
+        /// Add a Finger PowerUp
+        /// </summary>
+        public void AddFinger()
+        {
+            cookieGame.AddPowerUp(new Finger());
+            UpdateLabels();
+            CheckEnabled();
+        }
+
+        /// <summary>
+        /// Add a Grandma PowerUp
+        /// </summary>
+        public void AddGrandma()
+        {
+            cookieGame.AddPowerUp(new Grandma());
+            CheckEnabled();
+            UpdateLabels();
+        }
+
+        /// <summary>
+        /// Add a Robot PowerUp
+        /// </summary>
+        public void AddRobot()
+        {
+            cookieGame.AddPowerUp(new Robot());
+            CheckEnabled();
+            UpdateLabels();
         }
 
         private void btnQuitGame_Click(object sender, EventArgs e)
@@ -185,26 +274,7 @@ namespace CookieClicker
             Start();
         }
 
-        public void AddFinger()
-        {
-            cookieGame.AddPowerUp(new Finger());
-            UpdateLabels();
-            CheckEnabled();
-        }
 
-        public void AddGrandma()
-        {
-            cookieGame.AddPowerUp(new Grandma());
-            CheckEnabled();
-            UpdateLabels();
-        }
-
-        public void AddRobot()
-        {
-            cookieGame.AddPowerUp(new Robot());
-            CheckEnabled();
-            UpdateLabels();
-        }
 
         private void btnBuyFinger_Click(object sender, EventArgs e)
         {

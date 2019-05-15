@@ -56,18 +56,22 @@
             // lbCookies
             // 
             this.lbCookies.AutoSize = true;
-            this.lbCookies.Location = new System.Drawing.Point(108, 81);
+            this.lbCookies.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCookies.Location = new System.Drawing.Point(81, 66);
+            this.lbCookies.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCookies.Name = "lbCookies";
-            this.lbCookies.Size = new System.Drawing.Size(74, 17);
+            this.lbCookies.Size = new System.Drawing.Size(81, 16);
             this.lbCookies.TabIndex = 1;
             this.lbCookies.Text = "Cookies: 0";
             // 
             // lbCPS
             // 
             this.lbCPS.AutoSize = true;
-            this.lbCPS.Location = new System.Drawing.Point(108, 114);
+            this.lbCPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCPS.Location = new System.Drawing.Point(81, 93);
+            this.lbCPS.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCPS.Name = "lbCPS";
-            this.lbCPS.Size = new System.Drawing.Size(152, 17);
+            this.lbCPS.Size = new System.Drawing.Size(166, 16);
             this.lbCPS.TabIndex = 2;
             this.lbCPS.Text = "Cookies Per Second: 0";
             // 
@@ -80,11 +84,11 @@
             // 
             this.tabControl.Controls.Add(this.tabMenu);
             this.tabControl.Controls.Add(this.tabGame);
-            this.tabControl.Location = new System.Drawing.Point(12, 12);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl.Location = new System.Drawing.Point(9, 10);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(803, 478);
+            this.tabControl.Size = new System.Drawing.Size(602, 388);
             this.tabControl.TabIndex = 3;
             // 
             // tabMenu
@@ -92,31 +96,31 @@
             this.tabMenu.Controls.Add(this.btnLoad);
             this.tabMenu.Controls.Add(this.btnQuitGame);
             this.tabMenu.Controls.Add(this.btnStartGame);
-            this.tabMenu.Location = new System.Drawing.Point(4, 25);
-            this.tabMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabMenu.Location = new System.Drawing.Point(4, 22);
+            this.tabMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabMenu.Name = "tabMenu";
-            this.tabMenu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabMenu.Size = new System.Drawing.Size(795, 449);
+            this.tabMenu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabMenu.Size = new System.Drawing.Size(594, 362);
             this.tabMenu.TabIndex = 0;
             this.tabMenu.Text = "Menu";
             this.tabMenu.UseVisualStyleBackColor = true;
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(309, 209);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLoad.Location = new System.Drawing.Point(232, 170);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(141, 49);
+            this.btnLoad.Size = new System.Drawing.Size(106, 40);
             this.btnLoad.TabIndex = 2;
             this.btnLoad.Text = "Load Game";
             this.btnLoad.UseVisualStyleBackColor = true;
             // 
             // btnQuitGame
             // 
-            this.btnQuitGame.Location = new System.Drawing.Point(309, 279);
-            this.btnQuitGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuitGame.Location = new System.Drawing.Point(232, 227);
+            this.btnQuitGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnQuitGame.Name = "btnQuitGame";
-            this.btnQuitGame.Size = new System.Drawing.Size(141, 49);
+            this.btnQuitGame.Size = new System.Drawing.Size(106, 40);
             this.btnQuitGame.TabIndex = 1;
             this.btnQuitGame.Text = "Quit";
             this.btnQuitGame.UseVisualStyleBackColor = true;
@@ -124,10 +128,10 @@
             // 
             // btnStartGame
             // 
-            this.btnStartGame.Location = new System.Drawing.Point(309, 144);
-            this.btnStartGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStartGame.Location = new System.Drawing.Point(232, 117);
+            this.btnStartGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStartGame.Name = "btnStartGame";
-            this.btnStartGame.Size = new System.Drawing.Size(141, 49);
+            this.btnStartGame.Size = new System.Drawing.Size(106, 40);
             this.btnStartGame.TabIndex = 0;
             this.btnStartGame.Text = "Start";
             this.btnStartGame.UseVisualStyleBackColor = true;
@@ -145,11 +149,11 @@
             this.tabGame.Controls.Add(this.lbFingers);
             this.tabGame.Controls.Add(this.lbCPS);
             this.tabGame.Controls.Add(this.lbCookies);
-            this.tabGame.Location = new System.Drawing.Point(4, 25);
-            this.tabGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabGame.Location = new System.Drawing.Point(4, 22);
+            this.tabGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabGame.Name = "tabGame";
-            this.tabGame.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabGame.Size = new System.Drawing.Size(795, 449);
+            this.tabGame.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabGame.Size = new System.Drawing.Size(594, 362);
             this.tabGame.TabIndex = 1;
             this.tabGame.Text = "Game";
             this.tabGame.UseVisualStyleBackColor = true;
@@ -158,10 +162,9 @@
             // 
             this.lbPlusCookie_1.AutoSize = true;
             this.lbPlusCookie_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPlusCookie_1.Location = new System.Drawing.Point(132, 196);
-            this.lbPlusCookie_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPlusCookie_1.Location = new System.Drawing.Point(99, 159);
             this.lbPlusCookie_1.Name = "lbPlusCookie_1";
-            this.lbPlusCookie_1.Size = new System.Drawing.Size(90, 18);
+            this.lbPlusCookie_1.Size = new System.Drawing.Size(75, 15);
             this.lbPlusCookie_1.TabIndex = 9;
             this.lbPlusCookie_1.Text = "+1 Cookie!";
             this.lbPlusCookie_1.Visible = false;
@@ -169,10 +172,9 @@
             // 
             // pbCookie
             // 
-            this.pbCookie.Location = new System.Drawing.Point(112, 167);
-            this.pbCookie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbCookie.Location = new System.Drawing.Point(84, 136);
             this.pbCookie.Name = "pbCookie";
-            this.pbCookie.Size = new System.Drawing.Size(247, 214);
+            this.pbCookie.Size = new System.Drawing.Size(185, 174);
             this.pbCookie.TabIndex = 12;
             this.pbCookie.TabStop = false;
             this.pbCookie.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbCookie_MouseDown);
@@ -180,10 +182,10 @@
             // 
             // btnBuyRobot
             // 
-            this.btnBuyRobot.Location = new System.Drawing.Point(612, 258);
-            this.btnBuyRobot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuyRobot.Location = new System.Drawing.Point(459, 210);
+            this.btnBuyRobot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuyRobot.Name = "btnBuyRobot";
-            this.btnBuyRobot.Size = new System.Drawing.Size(123, 31);
+            this.btnBuyRobot.Size = new System.Drawing.Size(92, 25);
             this.btnBuyRobot.TabIndex = 8;
             this.btnBuyRobot.Text = "Robot = 200";
             this.btnBuyRobot.UseVisualStyleBackColor = true;
@@ -192,18 +194,19 @@
             // lbRobots
             // 
             this.lbRobots.AutoSize = true;
-            this.lbRobots.Location = new System.Drawing.Point(609, 238);
+            this.lbRobots.Location = new System.Drawing.Point(457, 193);
+            this.lbRobots.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRobots.Name = "lbRobots";
-            this.lbRobots.Size = new System.Drawing.Size(69, 17);
+            this.lbRobots.Size = new System.Drawing.Size(53, 13);
             this.lbRobots.TabIndex = 7;
             this.lbRobots.Text = "Robots: 0";
             // 
             // btnBuyGrandma
             // 
-            this.btnBuyGrandma.Location = new System.Drawing.Point(612, 167);
-            this.btnBuyGrandma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuyGrandma.Location = new System.Drawing.Point(459, 136);
+            this.btnBuyGrandma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuyGrandma.Name = "btnBuyGrandma";
-            this.btnBuyGrandma.Size = new System.Drawing.Size(123, 31);
+            this.btnBuyGrandma.Size = new System.Drawing.Size(92, 25);
             this.btnBuyGrandma.TabIndex = 6;
             this.btnBuyGrandma.Text = "Grandma = 50";
             this.btnBuyGrandma.UseVisualStyleBackColor = true;
@@ -212,18 +215,19 @@
             // lbGrandmas
             // 
             this.lbGrandmas.AutoSize = true;
-            this.lbGrandmas.Location = new System.Drawing.Point(609, 148);
+            this.lbGrandmas.Location = new System.Drawing.Point(457, 120);
+            this.lbGrandmas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbGrandmas.Name = "lbGrandmas";
-            this.lbGrandmas.Size = new System.Drawing.Size(90, 17);
+            this.lbGrandmas.Size = new System.Drawing.Size(67, 13);
             this.lbGrandmas.TabIndex = 5;
             this.lbGrandmas.Text = "Grandmas: 0";
             // 
             // btnBuyFinger
             // 
-            this.btnBuyFinger.Location = new System.Drawing.Point(612, 81);
-            this.btnBuyFinger.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuyFinger.Location = new System.Drawing.Point(459, 66);
+            this.btnBuyFinger.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuyFinger.Name = "btnBuyFinger";
-            this.btnBuyFinger.Size = new System.Drawing.Size(123, 31);
+            this.btnBuyFinger.Size = new System.Drawing.Size(92, 25);
             this.btnBuyFinger.TabIndex = 4;
             this.btnBuyFinger.Text = "Finger = 10";
             this.btnBuyFinger.UseVisualStyleBackColor = true;
@@ -232,9 +236,10 @@
             // lbFingers
             // 
             this.lbFingers.AutoSize = true;
-            this.lbFingers.Location = new System.Drawing.Point(609, 62);
+            this.lbFingers.Location = new System.Drawing.Point(457, 50);
+            this.lbFingers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFingers.Name = "lbFingers";
-            this.lbFingers.Size = new System.Drawing.Size(71, 17);
+            this.lbFingers.Size = new System.Drawing.Size(53, 13);
             this.lbFingers.TabIndex = 3;
             this.lbFingers.Text = "Fingers: 0";
             // 
@@ -246,11 +251,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 505);
+            this.ClientSize = new System.Drawing.Size(620, 410);
             this.Controls.Add(this.tabControl);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
