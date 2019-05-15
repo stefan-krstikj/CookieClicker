@@ -8,7 +8,7 @@ namespace CookieClicker
 {
     class Grandma : PowerUp
     {
-         public Grandma() : base(Constants.GRANDMA_CPS, Constants.GRANDMA_COST)
+         public Grandma() : base(PowerUpRates.Grandma_CPS, PowerUpRates.Grandma_Cost)
         {
 
         }

@@ -19,46 +19,46 @@ namespace CookieClicker
         public long Fingers { get; set; }
         public long Grandmas { get; set; }
         public long Robots { get; set; }
-        public Boolean CookieClickedFlag { get; set; }
+        public long TotalClicksCount { get; set; }
+        public long TotalCookiesCount { get; set; }
 
         public CookieGame(Cookie cookie)
         {
-
-            // todo: change these to 'StartGame'
             this.Cookie = cookie;
             powerUps = new List<PowerUp>();
             StartGame();
         }
           
-        // method for on cookie click
+        /// <summary>
+        /// Increas CookiesCount
+        /// </summary>
         public void ClickCookie()
         {
             ++CookiesCount;
         }
 
-        // todo: remove drawing methods
-        public void DrawCookieDown()
-        {
-           // Cookie.DrawSmall(gSmall);
-        }
-
-        public void DrawCookieUp()
-        {
-            Debug.WriteLine("CookieGame: DrawCookieUp()");
-           // Cookie.DrawBig(gBig);
-        }
-
+        /// <summary>
+        /// Increase CPS
+        /// </summary>
+        /// <param name="increaseAmount"></param>
         public void IncreaseClicksPerSecond(float increaseAmount)
         {
             Debug.WriteLine("Increasing CPS... + {0}", increaseAmount);
             ClicksPerSecond += increaseAmount;
         }
 
+        /// <summary>
+        /// Add CPS to current Cookie Count
+        /// </summary>
         public void UpdateCookies()
         {
             CookiesCount += (int) ClicksPerSecond;
         }
 
+        /// <summary>
+        /// Start the Game
+        /// <para>Reset counters to 0</para>
+        /// </summary>
         public void StartGame()
         {
             ClicksPerSecond = Constants.CLICKS_PER_SECOND;
@@ -66,32 +66,40 @@ namespace CookieClicker
             Fingers = 0;
             Grandmas = 0;
             Robots = 0;
-            CookieClickedFlag = false;
-
         }
 
+        /// <summary>
+        /// Update current Cookie Count after PowerUp purchase
+        /// </summary>
+        /// <param name="powerUp"></param>
         public void UpdateCounts(PowerUp powerUp)
         {
+            CookiesCount -= (long)powerUp.getCost();
             if (powerUp is Finger)
             {
-                CookiesCount -= Constants.FINGER_COST;
                 Fingers++;
+                PowerUpRates.UpdateFingerCosts();
             }
                 
             else if (powerUp is Grandma)
             {
-                CookiesCount -= Constants.GRANDMA_COST;
                 Grandmas++;
+                PowerUpRates.UpdateGrandmaCosts();
             }
 
             else if (powerUp is Robot)
             {
-                CookiesCount -= Constants.ROBOT_COST;
                 Robots++;
+                PowerUpRates.UpdateRobotCosts();
             }
              
         }
 
+
+        /// <summary>
+        /// Add a PowerUp to the game
+        /// </summary>
+        /// <param name="powerUp"></param>
         public void AddPowerUp(PowerUp powerUp)
         {
             Debug.Write("Adding powerup... " + powerUp.ToString() + " With CPS: " + powerUp.ClicksPerSecond +" And cost: " + powerUp.Cost+ " \n");

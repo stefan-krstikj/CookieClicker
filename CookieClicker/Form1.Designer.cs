@@ -185,7 +185,7 @@
             this.btnBuyRobot.Location = new System.Drawing.Point(459, 210);
             this.btnBuyRobot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuyRobot.Name = "btnBuyRobot";
-            this.btnBuyRobot.Size = new System.Drawing.Size(92, 25);
+            this.btnBuyRobot.Size = new System.Drawing.Size(111, 36);
             this.btnBuyRobot.TabIndex = 8;
             this.btnBuyRobot.Text = "Robot = 200";
             this.btnBuyRobot.UseVisualStyleBackColor = true;
@@ -206,7 +206,7 @@
             this.btnBuyGrandma.Location = new System.Drawing.Point(459, 136);
             this.btnBuyGrandma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuyGrandma.Name = "btnBuyGrandma";
-            this.btnBuyGrandma.Size = new System.Drawing.Size(92, 25);
+            this.btnBuyGrandma.Size = new System.Drawing.Size(111, 38);
             this.btnBuyGrandma.TabIndex = 6;
             this.btnBuyGrandma.Text = "Grandma = 50";
             this.btnBuyGrandma.UseVisualStyleBackColor = true;
@@ -227,7 +227,7 @@
             this.btnBuyFinger.Location = new System.Drawing.Point(459, 66);
             this.btnBuyFinger.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuyFinger.Name = "btnBuyFinger";
-            this.btnBuyFinger.Size = new System.Drawing.Size(92, 25);
+            this.btnBuyFinger.Size = new System.Drawing.Size(111, 43);
             this.btnBuyFinger.TabIndex = 4;
             this.btnBuyFinger.Text = "Finger = 10";
             this.btnBuyFinger.UseVisualStyleBackColor = true;

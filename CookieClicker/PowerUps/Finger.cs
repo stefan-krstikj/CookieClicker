@@ -8,9 +8,9 @@ namespace CookieClicker
 {
     class Finger : PowerUp
     {
-        public Finger() : base(Constants.FINGER_CPS, Constants.FINGER_COST)
+        public Finger() : base(PowerUpRates.Finger_CPS, PowerUpRates.Finger_Cost)
         {
-
+            
         }
     }
 }

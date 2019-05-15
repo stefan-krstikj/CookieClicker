@@ -49,6 +49,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Cookie.cs" />
     <Compile Include="CookieGame.cs" />
+    <Compile Include="PowerUpRates.cs" />
     <Compile Include="PowerUps\Finger.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

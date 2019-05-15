@@ -8,9 +8,10 @@ namespace CookieClicker
 {
     class Robot : PowerUp
     {
-        public Robot() : base(Constants.ROBOT_CPS, Constants.ROBOT_COST)
+        public Robot() : base(PowerUpRates.Robot_CPS, PowerUpRates.Robot_Cost)
         {
 
         }
+
     }
 }

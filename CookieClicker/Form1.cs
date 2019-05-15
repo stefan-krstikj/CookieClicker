@@ -130,6 +130,7 @@ namespace CookieClicker
         public void UpdateFingerLabel()
         {
             this.lbFingers.Text = String.Format("Fingers: {0}", cookieGame.Fingers);
+            this.btnBuyFinger.Text = String.Format("Finger = {0:0.00} CPS: {1:0.00}", PowerUpRates.Finger_Cost, PowerUpRates.Finger_CPS);
         }
 
         /// <summary>
@@ -138,7 +139,7 @@ namespace CookieClicker
         public void UpdateGrandmaLabel()
         {
             this.lbGrandmas.Text = String.Format("Grandmas: {0}", cookieGame.Grandmas);
-
+            this.btnBuyGrandma.Text = String.Format("Grandma = {0:0.00} CPS: {1:0.00}", PowerUpRates.Grandma_Cost, PowerUpRates.Grandma_CPS);
         }
 
         /// <summary>
@@ -147,6 +148,7 @@ namespace CookieClicker
         public void UpdateRobotLabel()
         {
             this.lbRobots.Text = String.Format("Robots: {0}", cookieGame.Grandmas);
+            this.btnBuyRobot.Text = String.Format("Robot = {0:0.00} CPS: {1:0.00}", PowerUpRates.Robot_Cost, PowerUpRates.Robot_CPS);
         }
 
         /// <summary>
@@ -155,6 +157,7 @@ namespace CookieClicker
         public void UpdateCookiesLabel()
         {
             this.lbCookies.Text = String.Format("Cookies: {0}", cookieGame.CookiesCount);
+            
         }
 
         /// <summary>
@@ -184,9 +187,7 @@ namespace CookieClicker
         {
             CheckEnabled();
             UpdateLabels();
-            this.btnBuyGrandma.Text = String.Format("Grandma = {0}", Constants.GRANDMA_COST);
-            this.btnBuyRobot.Text = String.Format("Robot = {0}", Constants.ROBOT_COST);
-            this.btnBuyFinger.Text = String.Format("Finger = {0}", Constants.FINGER_COST);
+            
             timeCookiePerSecond.Start();
             tabControl.SelectedTab = tabGame;
         }
