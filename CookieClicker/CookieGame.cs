@@ -16,9 +16,9 @@ namespace CookieClicker
         public long CookiesCount { get; set; }
         public List<PowerUp> powerUps { get; set; }
 
-        public long Fingers { get; set; }
-        public long Grandmas { get; set; }
-        public long Robots { get; set; }
+        public static long FingersCount { get; set; }
+        public static long GrandmasCount { get; set; }
+        public static long RobotsCount { get; set; }
         public long TotalClicksCount { get; set; }
         public long TotalCookiesCount { get; set; }
 
@@ -63,9 +63,9 @@ namespace CookieClicker
         {
             ClicksPerSecond = Constants.CLICKS_PER_SECOND;
             CookiesCount = 0;
-            Fingers = 0;
-            Grandmas = 0;
-            Robots = 0;
+            FingersCount = 0;
+            GrandmasCount = 0;
+            RobotsCount = 0;
         }
 
         /// <summary>
@@ -75,21 +75,19 @@ namespace CookieClicker
         public void UpdateCounts(PowerUp powerUp)
         {
             CookiesCount -= (long)powerUp.getCost();
+            powerUp.IncreaseCount();
             if (powerUp is Finger)
             {
-                Fingers++;
                 PowerUpRates.UpdateFingerCosts();
             }
                 
             else if (powerUp is Grandma)
             {
-                Grandmas++;
                 PowerUpRates.UpdateGrandmaCosts();
             }
 
             else if (powerUp is Robot)
-            {
-                Robots++;
+            {              
                 PowerUpRates.UpdateRobotCosts();
             }
              

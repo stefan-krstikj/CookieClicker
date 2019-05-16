@@ -13,6 +13,11 @@ namespace CookieClicker
 
         }
 
+        public override void IncreaseCount()
+        {
+            CookieGame.GrandmasCount++;
+        }
+
         public override string ToString()
         {
             return "Grandma, CPS: " + base.ClicksPerSecond + " COST: "+base.Cost;

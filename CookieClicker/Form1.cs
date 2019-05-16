@@ -129,7 +129,7 @@ namespace CookieClicker
         /// </summary>
         public void UpdateFingerLabel()
         {
-            this.lbFingers.Text = String.Format("Fingers: {0}", cookieGame.Fingers);
+            this.lbFingers.Text = String.Format("Fingers: {0}", CookieGame.FingersCount);
             this.btnBuyFinger.Text = String.Format("Finger = {0:0.00} CPS: {1:0.00}", PowerUpRates.Finger_Cost, PowerUpRates.Finger_CPS);
         }
 
@@ -138,7 +138,7 @@ namespace CookieClicker
         /// </summary>
         public void UpdateGrandmaLabel()
         {
-            this.lbGrandmas.Text = String.Format("Grandmas: {0}", cookieGame.Grandmas);
+            this.lbGrandmas.Text = String.Format("Grandmas: {0}", CookieGame.GrandmasCount);
             this.btnBuyGrandma.Text = String.Format("Grandma = {0:0.00} CPS: {1:0.00}", PowerUpRates.Grandma_Cost, PowerUpRates.Grandma_CPS);
         }
 
@@ -147,7 +147,7 @@ namespace CookieClicker
         /// </summary>
         public void UpdateRobotLabel()
         {
-            this.lbRobots.Text = String.Format("Robots: {0}", cookieGame.Grandmas);
+            this.lbRobots.Text = String.Format("Robots: {0}", CookieGame.RobotsCount);
             this.btnBuyRobot.Text = String.Format("Robot = {0:0.00} CPS: {1:0.00}", PowerUpRates.Robot_Cost, PowerUpRates.Robot_CPS);
         }
 

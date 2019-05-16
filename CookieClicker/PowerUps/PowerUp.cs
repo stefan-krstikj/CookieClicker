@@ -26,6 +26,8 @@ namespace CookieClicker
             return this.Cost;
         }
 
+        abstract public void IncreaseCount();
+
         // vvv NOT IN USE vvv
         public String PriceAndCPS()
         {

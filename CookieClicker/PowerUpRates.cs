@@ -18,20 +18,20 @@ namespace CookieClicker
 
         public static void UpdateFingerCosts()
         {
-            Finger_Cost = Finger_Cost * Constants.FINGER_INCREASE;
-            Finger_CPS = Finger_CPS * Constants.FINGER_INCREASE;
+            Finger_Cost = Finger_Cost * Constants.FINGER_INCREASE_COST;
+            Finger_CPS = Finger_CPS * Constants.FINGER_INCREASE_CPS;
         }
 
         public static void UpdateGrandmaCosts()
         {
-            Grandma_Cost = Grandma_Cost * Constants.GRANDMA_INCREASE;
-            Grandma_CPS = Grandma_CPS * Constants.GRANDMA_INCREASE;
+            Grandma_Cost = Grandma_Cost * Constants.GRANDMA_INCREASE_COST;
+            Grandma_CPS = Grandma_CPS * Constants.GRANDMA_INCREASE_CPS;
         }
 
         public static void UpdateRobotCosts()
         {
-            Robot_Cost = Robot_Cost * Constants.ROBOT_INCREASE;
-            Robot_CPS = Robot_CPS * Constants.ROBOT_INCREASE;
+            Robot_Cost = Robot_Cost * Constants.ROBOT_INCREASE_COST;
+            Robot_CPS = Robot_CPS * Constants.ROBOT_INCREASE_CPS;
         }
 
         public static float getFinger_Cost()

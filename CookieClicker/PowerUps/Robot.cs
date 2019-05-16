@@ -13,5 +13,9 @@ namespace CookieClicker
 
         }
 
+        public override void IncreaseCount()
+        {
+            CookieGame.RobotsCount++;
+        }
     }
 }
