@@ -73,6 +73,16 @@ namespace CookieClicker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cookie1_fall {
+            get {
+                object obj = ResourceManager.GetObject("cookie1_fall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cookie1_transparent {
             get {
                 object obj = ResourceManager.GetObject("cookie1_transparent", resourceCulture);
