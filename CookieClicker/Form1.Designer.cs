@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timeCookiePerSecond = new System.Windows.Forms.Timer(this.components);
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabMenu = new System.Windows.Forms.TabPage();
@@ -67,11 +68,11 @@
             // 
             this.tabControl.Controls.Add(this.tabMenu);
             this.tabControl.Controls.Add(this.tabGame);
-            this.tabControl.Location = new System.Drawing.Point(9, 10);
+            this.tabControl.Location = new System.Drawing.Point(-8, -27);
             this.tabControl.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(602, 388);
+            this.tabControl.Size = new System.Drawing.Size(630, 406);
             this.tabControl.TabIndex = 3;
             // 
             // tabMenu
@@ -82,14 +83,14 @@
             this.tabMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.Padding = new System.Windows.Forms.Padding(2);
-            this.tabMenu.Size = new System.Drawing.Size(594, 362);
+            this.tabMenu.Size = new System.Drawing.Size(622, 380);
             this.tabMenu.TabIndex = 0;
             this.tabMenu.Text = "Menu";
             this.tabMenu.UseVisualStyleBackColor = true;
             // 
             // btnQuitGame
             // 
-            this.btnQuitGame.Location = new System.Drawing.Point(166, 190);
+            this.btnQuitGame.Location = new System.Drawing.Point(183, 205);
             this.btnQuitGame.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuitGame.Name = "btnQuitGame";
             this.btnQuitGame.Size = new System.Drawing.Size(244, 40);
@@ -100,7 +101,7 @@
             // 
             // btnStartGame
             // 
-            this.btnStartGame.Location = new System.Drawing.Point(166, 123);
+            this.btnStartGame.Location = new System.Drawing.Point(183, 141);
             this.btnStartGame.Margin = new System.Windows.Forms.Padding(2);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(244, 40);
@@ -116,7 +117,7 @@
             this.tabGame.Margin = new System.Windows.Forms.Padding(2);
             this.tabGame.Name = "tabGame";
             this.tabGame.Padding = new System.Windows.Forms.Padding(2);
-            this.tabGame.Size = new System.Drawing.Size(594, 362);
+            this.tabGame.Size = new System.Drawing.Size(622, 380);
             this.tabGame.TabIndex = 1;
             this.tabGame.Text = "Game";
             this.tabGame.UseVisualStyleBackColor = true;
@@ -300,8 +301,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 410);
+            this.ClientSize = new System.Drawing.Size(615, 372);
             this.Controls.Add(this.tabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Cookie Clicker";
