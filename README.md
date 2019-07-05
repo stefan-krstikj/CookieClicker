@@ -59,8 +59,8 @@ void timerFall_Tick(object sender, EventArgs e)
 
 Почетен екран<br/>
 
-![Почетен екран](https://i.imgur.com/BkMqZAN.png "Почетен екран")
+![Почетен екран](https://i.imgur.com/QXYYx9Y.png "Почетен екран")
 
 Играње на играта<br/>
 
-![Игра](https://i.imgur.com/j7DN6wc.png "Играње")
+![Игра](https://i.imgur.com/JScdC4U.png "Играње")
