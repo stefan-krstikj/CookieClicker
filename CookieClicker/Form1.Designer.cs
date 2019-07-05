@@ -32,13 +32,13 @@
             this.timeCookiePerSecond = new System.Windows.Forms.Timer(this.components);
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabMenu = new System.Windows.Forms.TabPage();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.btnQuitGame = new System.Windows.Forms.Button();
             this.btnStartGame = new System.Windows.Forms.Button();
             this.tabGame = new System.Windows.Forms.TabPage();
-            this.timeLabelDisappear = new System.Windows.Forms.Timer(this.components);
-            this.timerFall = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFiveRobots = new System.Windows.Forms.Button();
+            this.btnFiveGrandmas = new System.Windows.Forms.Button();
+            this.btnFiveFinger = new System.Windows.Forms.Button();
             this.lbPlusCookie_1 = new System.Windows.Forms.Label();
             this.pbCookie = new System.Windows.Forms.PictureBox();
             this.btnBuyRobot = new System.Windows.Forms.Button();
@@ -49,6 +49,8 @@
             this.lbFingers = new System.Windows.Forms.Label();
             this.lbCPS = new System.Windows.Forms.Label();
             this.lbCookies = new System.Windows.Forms.Label();
+            this.timeLabelDisappear = new System.Windows.Forms.Timer(this.components);
+            this.timerFall = new System.Windows.Forms.Timer(this.components);
             this.tabControl.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabGame.SuspendLayout();
@@ -74,7 +76,6 @@
             // 
             // tabMenu
             // 
-            this.tabMenu.Controls.Add(this.btnLoad);
             this.tabMenu.Controls.Add(this.btnQuitGame);
             this.tabMenu.Controls.Add(this.btnStartGame);
             this.tabMenu.Location = new System.Drawing.Point(4, 22);
@@ -86,22 +87,12 @@
             this.tabMenu.Text = "Menu";
             this.tabMenu.UseVisualStyleBackColor = true;
             // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(232, 170);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(106, 40);
-            this.btnLoad.TabIndex = 2;
-            this.btnLoad.Text = "Load Game";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            // 
             // btnQuitGame
             // 
-            this.btnQuitGame.Location = new System.Drawing.Point(232, 227);
+            this.btnQuitGame.Location = new System.Drawing.Point(166, 190);
             this.btnQuitGame.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuitGame.Name = "btnQuitGame";
-            this.btnQuitGame.Size = new System.Drawing.Size(106, 40);
+            this.btnQuitGame.Size = new System.Drawing.Size(244, 40);
             this.btnQuitGame.TabIndex = 1;
             this.btnQuitGame.Text = "Quit";
             this.btnQuitGame.UseVisualStyleBackColor = true;
@@ -109,10 +100,10 @@
             // 
             // btnStartGame
             // 
-            this.btnStartGame.Location = new System.Drawing.Point(232, 117);
+            this.btnStartGame.Location = new System.Drawing.Point(166, 123);
             this.btnStartGame.Margin = new System.Windows.Forms.Padding(2);
             this.btnStartGame.Name = "btnStartGame";
-            this.btnStartGame.Size = new System.Drawing.Size(106, 40);
+            this.btnStartGame.Size = new System.Drawing.Size(244, 40);
             this.btnStartGame.TabIndex = 0;
             this.btnStartGame.Text = "Start";
             this.btnStartGame.UseVisualStyleBackColor = true;
@@ -131,18 +122,11 @@
             this.tabGame.UseVisualStyleBackColor = true;
             this.tabGame.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             // 
-            // timeLabelDisappear
-            // 
-            this.timeLabelDisappear.Enabled = true;
-            this.timeLabelDisappear.Interval = 350;
-            this.timeLabelDisappear.Tick += new System.EventHandler(this.timeLabelDisappear_Tick);
-            // 
-            // timerFall
-            // 
-            this.timerFall.Tick += new System.EventHandler(this.timerFall_Tick);
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnFiveRobots);
+            this.panel1.Controls.Add(this.btnFiveGrandmas);
+            this.panel1.Controls.Add(this.btnFiveFinger);
             this.panel1.Controls.Add(this.lbPlusCookie_1);
             this.panel1.Controls.Add(this.pbCookie);
             this.panel1.Controls.Add(this.btnBuyRobot);
@@ -157,6 +141,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(594, 362);
             this.panel1.TabIndex = 0;
+            // 
+            // btnFiveRobots
+            // 
+            this.btnFiveRobots.Location = new System.Drawing.Point(455, 275);
+            this.btnFiveRobots.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiveRobots.Name = "btnFiveRobots";
+            this.btnFiveRobots.Size = new System.Drawing.Size(124, 36);
+            this.btnFiveRobots.TabIndex = 25;
+            this.btnFiveRobots.Text = "Five Robots = 1000";
+            this.btnFiveRobots.UseVisualStyleBackColor = true;
+            this.btnFiveRobots.Click += new System.EventHandler(this.BtnFiveRobots_Click);
+            // 
+            // btnFiveGrandmas
+            // 
+            this.btnFiveGrandmas.Location = new System.Drawing.Point(455, 180);
+            this.btnFiveGrandmas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiveGrandmas.Name = "btnFiveGrandmas";
+            this.btnFiveGrandmas.Size = new System.Drawing.Size(124, 38);
+            this.btnFiveGrandmas.TabIndex = 24;
+            this.btnFiveGrandmas.Text = "Five Grandmas = 250";
+            this.btnFiveGrandmas.UseVisualStyleBackColor = true;
+            this.btnFiveGrandmas.Click += new System.EventHandler(this.BtnFiveGrandmas_Click);
+            // 
+            // btnFiveFinger
+            // 
+            this.btnFiveFinger.Location = new System.Drawing.Point(455, 81);
+            this.btnFiveFinger.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFiveFinger.Name = "btnFiveFinger";
+            this.btnFiveFinger.Size = new System.Drawing.Size(124, 43);
+            this.btnFiveFinger.TabIndex = 23;
+            this.btnFiveFinger.Text = "Five Fingers = 50";
+            this.btnFiveFinger.UseVisualStyleBackColor = true;
+            this.btnFiveFinger.Click += new System.EventHandler(this.BtnFiveFingers_Click);
             // 
             // lbPlusCookie_1
             // 
@@ -181,10 +198,10 @@
             // 
             // btnBuyRobot
             // 
-            this.btnBuyRobot.Location = new System.Drawing.Point(431, 211);
+            this.btnBuyRobot.Location = new System.Drawing.Point(316, 275);
             this.btnBuyRobot.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuyRobot.Name = "btnBuyRobot";
-            this.btnBuyRobot.Size = new System.Drawing.Size(111, 36);
+            this.btnBuyRobot.Size = new System.Drawing.Size(125, 36);
             this.btnBuyRobot.TabIndex = 20;
             this.btnBuyRobot.Text = "Robot = 200";
             this.btnBuyRobot.UseVisualStyleBackColor = true;
@@ -194,7 +211,7 @@
             // 
             this.lbRobots.AutoSize = true;
             this.lbRobots.BackColor = System.Drawing.Color.White;
-            this.lbRobots.Location = new System.Drawing.Point(429, 194);
+            this.lbRobots.Location = new System.Drawing.Point(314, 258);
             this.lbRobots.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRobots.Name = "lbRobots";
             this.lbRobots.Size = new System.Drawing.Size(53, 13);
@@ -203,10 +220,10 @@
             // 
             // btnBuyGrandma
             // 
-            this.btnBuyGrandma.Location = new System.Drawing.Point(431, 137);
+            this.btnBuyGrandma.Location = new System.Drawing.Point(316, 180);
             this.btnBuyGrandma.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuyGrandma.Name = "btnBuyGrandma";
-            this.btnBuyGrandma.Size = new System.Drawing.Size(111, 38);
+            this.btnBuyGrandma.Size = new System.Drawing.Size(125, 38);
             this.btnBuyGrandma.TabIndex = 18;
             this.btnBuyGrandma.Text = "Grandma = 50";
             this.btnBuyGrandma.UseVisualStyleBackColor = true;
@@ -216,7 +233,7 @@
             // 
             this.lbGrandmas.AutoSize = true;
             this.lbGrandmas.BackColor = System.Drawing.Color.White;
-            this.lbGrandmas.Location = new System.Drawing.Point(429, 121);
+            this.lbGrandmas.Location = new System.Drawing.Point(314, 164);
             this.lbGrandmas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbGrandmas.Name = "lbGrandmas";
             this.lbGrandmas.Size = new System.Drawing.Size(67, 13);
@@ -225,10 +242,10 @@
             // 
             // btnBuyFinger
             // 
-            this.btnBuyFinger.Location = new System.Drawing.Point(431, 67);
+            this.btnBuyFinger.Location = new System.Drawing.Point(316, 81);
             this.btnBuyFinger.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuyFinger.Name = "btnBuyFinger";
-            this.btnBuyFinger.Size = new System.Drawing.Size(111, 43);
+            this.btnBuyFinger.Size = new System.Drawing.Size(125, 43);
             this.btnBuyFinger.TabIndex = 16;
             this.btnBuyFinger.Text = "Finger = 10";
             this.btnBuyFinger.UseVisualStyleBackColor = true;
@@ -238,7 +255,7 @@
             // 
             this.lbFingers.AutoSize = true;
             this.lbFingers.BackColor = System.Drawing.Color.White;
-            this.lbFingers.Location = new System.Drawing.Point(429, 51);
+            this.lbFingers.Location = new System.Drawing.Point(314, 65);
             this.lbFingers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFingers.Name = "lbFingers";
             this.lbFingers.Size = new System.Drawing.Size(53, 13);
@@ -269,6 +286,16 @@
             this.lbCookies.TabIndex = 13;
             this.lbCookies.Text = "Cookies: 0";
             // 
+            // timeLabelDisappear
+            // 
+            this.timeLabelDisappear.Enabled = true;
+            this.timeLabelDisappear.Interval = 350;
+            this.timeLabelDisappear.Tick += new System.EventHandler(this.timeLabelDisappear_Tick);
+            // 
+            // timerFall
+            // 
+            this.timerFall.Tick += new System.EventHandler(this.timerFall_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,7 +322,6 @@
         private System.Windows.Forms.TabPage tabMenu;
         private System.Windows.Forms.Button btnQuitGame;
         private System.Windows.Forms.Button btnStartGame;
-        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Timer timeLabelDisappear;
         private System.Windows.Forms.Timer timerFall;
         private System.Windows.Forms.Panel panel1;
@@ -309,6 +335,9 @@
         private System.Windows.Forms.Label lbFingers;
         private System.Windows.Forms.Label lbCPS;
         private System.Windows.Forms.Label lbCookies;
+        private System.Windows.Forms.Button btnFiveRobots;
+        private System.Windows.Forms.Button btnFiveGrandmas;
+        private System.Windows.Forms.Button btnFiveFinger;
     }
 }
 

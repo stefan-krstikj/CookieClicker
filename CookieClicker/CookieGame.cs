@@ -28,9 +28,9 @@ namespace CookieClicker
             powerUps = new List<PowerUp>();
             StartGame();
         }
-          
+
         /// <summary>
-        /// Increas CookiesCount
+        /// Increase CookiesCount
         /// </summary>
         public void ClickCookie()
         {
@@ -52,7 +52,7 @@ namespace CookieClicker
         /// </summary>
         public void UpdateCookies()
         {
-            CookiesCount += (int) ClicksPerSecond;
+            CookiesCount += (int)ClicksPerSecond;
         }
 
         /// <summary>
@@ -80,17 +80,37 @@ namespace CookieClicker
             {
                 PowerUpRates.UpdateFingerCosts();
             }
-                
+
             else if (powerUp is Grandma)
             {
                 PowerUpRates.UpdateGrandmaCosts();
             }
 
             else if (powerUp is Robot)
-            {              
+            {
                 PowerUpRates.UpdateRobotCosts();
             }
-             
+
+            // Gala code
+            else if (powerUp is FiveFingers)
+            {
+                PowerUpRates.UpdateFiveFingersCosts();
+
+            }
+
+            else if (powerUp is FiveGrandmas)
+            {
+                PowerUpRates.UpdateFiveGrandmasCosts();
+
+            }
+
+            else if (powerUp is FiveRobots)
+            {
+                PowerUpRates.UpdateFiveRobotsCosts();
+
+            }
+
+
         }
 
 
@@ -100,7 +120,7 @@ namespace CookieClicker
         /// <param name="powerUp"></param>
         public void AddPowerUp(PowerUp powerUp)
         {
-            Debug.Write("Adding powerup... " + powerUp.ToString() + " With CPS: " + powerUp.ClicksPerSecond +" And cost: " + powerUp.Cost+ " \n");
+            Debug.Write("Adding powerup... " + powerUp.ToString() + " With CPS: " + powerUp.ClicksPerSecond + " And cost: " + powerUp.Cost + " \n");
             this.powerUps.Add(powerUp);
             UpdateCounts(powerUp);
             IncreaseClicksPerSecond(powerUp.ClicksPerSecond);

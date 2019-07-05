@@ -12,7 +12,6 @@ using System.Windows.Forms;
 
 // todo: 
 // change CPS label to show 1 decimal
-// add progress bar with "Maximum power" 
 // add several Labels
 
 namespace CookieClicker
@@ -26,7 +25,7 @@ namespace CookieClicker
         private int generateFall;
         private Random random;
 
-        //tunt**/
+
 
         public Form1()
         {
@@ -36,10 +35,7 @@ namespace CookieClicker
             generateFall = 0;
             random = new Random();
 
-            // set background
-            // this.form.BackgroundImage = Properties.Resources.bluePattern1;
 
-            // doubleBuffered true
             this.DoubleBuffered = true;
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
@@ -49,6 +45,7 @@ namespace CookieClicker
             CreateCookie();
 
         }
+
 
         public void CreateCookie()
         {
@@ -68,6 +65,7 @@ namespace CookieClicker
             lbPlusCookie_1.BackColor = Color.Transparent;
         }
 
+        //funkcija za generiranje na topce shto pagja
         void timerFall_Tick(object sender, EventArgs e)
         {
             int module = 10;
@@ -191,6 +189,23 @@ namespace CookieClicker
             this.btnBuyRobot.Text = String.Format("Robot = {0:0} CPS: {1:0.00}", Math.Ceiling(PowerUpRates.Robot_Cost), PowerUpRates.Robot_CPS);
         }
 
+        // Gala code 
+
+
+        public void updateFiveFingerButton()
+        {
+            this.btnFiveFinger.Text = String.Format("Five Fingers = {0:0} CPS: {1:0.00}", Math.Ceiling(PowerUpRates.Finger_Cost * 5), PowerUpRates.Finger_CPS * 5);
+        }
+
+        public void updateFiveGrandmaButton()
+        {
+            this.btnFiveGrandmas.Text = String.Format("Five Grandmas = {0:0} CPS: {1:0.00}", Math.Ceiling(PowerUpRates.Grandma_Cost * 5), PowerUpRates.Grandma_CPS * 5);
+        }
+        public void updateFiveRobotButton()
+        {
+            this.btnFiveRobots.Text = String.Format("Five Robots = {0:0} CPS: {1:0.00}", Math.Ceiling(PowerUpRates.Robot_Cost * 5), PowerUpRates.Robot_CPS * 5);
+        }
+
         /// <summary>
         /// Update the Label for number of Cookies in inventory
         /// </summary>
@@ -218,6 +233,9 @@ namespace CookieClicker
             this.UpdateFingerLabel();
             this.UpdateGrandmaLabel();
             this.UpdateRobotLabel();
+            this.updateFiveFingerButton();
+            this.updateFiveGrandmaButton();
+            this.updateFiveRobotButton();
         }
 
         /// <summary>
@@ -264,6 +282,23 @@ namespace CookieClicker
                 btnBuyRobot.Enabled = false;
             else
                 btnBuyRobot.Enabled = true;
+
+            //gala
+
+            if (cookieGame.CookiesCount < PowerUpRates.Finger_Cost * 5)
+                btnFiveFinger.Enabled = false;
+            else
+                btnFiveFinger.Enabled = true;
+
+            if (cookieGame.CookiesCount < PowerUpRates.Grandma_Cost * 5)
+                btnFiveGrandmas.Enabled = false;
+            else
+                btnFiveGrandmas.Enabled = true;
+
+            if (cookieGame.CookiesCount < PowerUpRates.Robot_Cost * 5)
+                btnFiveRobots.Enabled = false;
+            else
+                btnFiveRobots.Enabled = true;
         }
 
         /// <summary>
@@ -309,6 +344,29 @@ namespace CookieClicker
             UpdateLabels();
         }
 
+        //gala
+        public void AddFiveFinger()
+        {
+            cookieGame.AddPowerUp(new FiveFingers());
+            UpdateLabels();
+            CheckEnabled();
+        }
+
+        public void AddFiveGrandma()
+        {
+            cookieGame.AddPowerUp(new FiveGrandmas());
+            UpdateLabels();
+            CheckEnabled();
+        }
+
+        public void AddFiveRobot()
+        {
+            cookieGame.AddPowerUp(new FiveRobots());
+            UpdateLabels();
+            CheckEnabled();
+        }
+
+
         private void btnQuitGame_Click(object sender, EventArgs e)
         {
             Quit();
@@ -332,6 +390,25 @@ namespace CookieClicker
         private void btnBuyRobot_Click(object sender, EventArgs e)
         {
             AddRobot();
+        }
+
+        //Gala code
+        private void BtnFiveFingers_Click(object sender, EventArgs e)
+        {
+            AddFiveFinger();
+
+        }
+
+        private void BtnFiveGrandmas_Click(object sender, EventArgs e)
+        {
+            AddFiveGrandma();
+
+        }
+
+        private void BtnFiveRobots_Click(object sender, EventArgs e)
+        {
+            AddFiveRobot();
+
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)

@@ -8,7 +8,7 @@ namespace CookieClicker
 {
     class Grandma : PowerUp
     {
-         public Grandma() : base(PowerUpRates.Grandma_CPS, PowerUpRates.Grandma_Cost)
+        public Grandma() : base(PowerUpRates.Grandma_CPS, PowerUpRates.Grandma_Cost)
         {
 
         }
@@ -20,7 +20,7 @@ namespace CookieClicker
 
         public override string ToString()
         {
-            return "Grandma, CPS: " + base.ClicksPerSecond + " COST: "+base.Cost;
+            return "Grandma, CPS: " + base.ClicksPerSecond + " COST: " + base.Cost;
         }
     }
 }

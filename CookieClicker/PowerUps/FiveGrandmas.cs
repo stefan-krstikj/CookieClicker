@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace CookieClicker
 {
-    class Finger : PowerUp
+    class FiveGrandmas : PowerUp
     {
-        public Finger() : base(PowerUpRates.Finger_CPS, PowerUpRates.Finger_Cost)
+        public FiveGrandmas() : base(PowerUpRates.Grandma_CPS * 5, PowerUpRates.Grandma_Cost * 5)
         {
 
         }
 
         public override void IncreaseCount()
         {
-            CookieGame.FingersCount++;
+            CookieGame.GrandmasCount += 5;
         }
+
     }
 }

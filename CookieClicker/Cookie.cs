@@ -20,12 +20,12 @@ namespace CookieClicker
 
         public void DrawBig(Graphics g)
         {
-            int imgWidth = (int) ((float)image.Width * 0.2f);
-            int imgHeight = (int) ((float)image.Height * 0.2f);
+            int imgWidth = (int)((float)image.Width * 0.2f);
+            int imgHeight = (int)((float)image.Height * 0.2f);
             int x = point.X - (imgWidth / 2);
             int y = point.Y - (imgHeight / 2);
             g.DrawImage(image, x, y, imgWidth, imgHeight);
-           // Debug.WriteLine(x + y + imgWidth + imgHeight);
+            // Debug.WriteLine(x + y + imgWidth + imgHeight);
         }
 
         public void DrawSmall(Graphics g)
@@ -33,7 +33,7 @@ namespace CookieClicker
             int imgWidth = (int)((float)image.Width * 0.15f);
             int imgHeight = (int)((float)image.Height * 0.15f);
             int x = point.X - (imgWidth);
-            int y = point.Y - (int)( imgHeight * 1.5);
+            int y = point.Y - (int)(imgHeight * 1.5);
             g.DrawImage(image, x, y, imgWidth, imgHeight);
             //Debug.WriteLine("X: " + x + " Y: " + y + " WID: " + imgWidth + " HEI: "+ imgHeight);
         }
