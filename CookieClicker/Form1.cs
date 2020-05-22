@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
-// todo: 
-// change CPS label to show 1 decimal
-// add several Labels
 
 namespace CookieClicker
 {
@@ -20,12 +8,9 @@ namespace CookieClicker
     {
         CookieGame cookieGame { get; set; }
 
-        //tunt
         private FallDoc fallDoc;
         private int generateFall;
         private Random random;
-
-
 
         public Form1()
         {
@@ -35,13 +20,16 @@ namespace CookieClicker
             generateFall = 0;
             random = new Random();
 
+            // set background
+            panel1.ForeColor = Color.White;
+            this.tabMenu.BackColor = Color.FromArgb(57, 89, 130);
+
 
             this.DoubleBuffered = true;
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
-            // create a cookie object
             CreateCookie();
 
         }
@@ -49,15 +37,12 @@ namespace CookieClicker
 
         public void CreateCookie()
         {
-            // create CookieGame object
             Cookie cookie = new Cookie();
             cookieGame = new CookieGame(cookie);
             cookieGame.StartGame();
             Invalidate(true);
 
-            // set PictureBox image to cookie image
             pbCookie.Image = Properties.Resources.cookie1_transparent_small;
-            // set PictureBox SizeMode to stretch image (to fill up the picturebox)
             pbCookie.SizeMode = PictureBoxSizeMode.StretchImage;
 
             // set needed label info for transparency
@@ -65,7 +50,7 @@ namespace CookieClicker
             lbPlusCookie_1.BackColor = Color.Transparent;
         }
 
-        //funkcija za generiranje na topce shto pagja
+        // generate falling cookie
         void timerFall_Tick(object sender, EventArgs e)
         {
             int module = 10;
@@ -247,7 +232,7 @@ namespace CookieClicker
             UpdateLabels();
 
             timeCookiePerSecond.Start();
-            //tunt
+
             timerFall.Start();
             tabControl.SelectedTab = tabGame;
         }
@@ -344,7 +329,6 @@ namespace CookieClicker
             UpdateLabels();
         }
 
-        //gala
         public void AddFiveFinger()
         {
             cookieGame.AddPowerUp(new FiveFingers());
@@ -391,8 +375,6 @@ namespace CookieClicker
         {
             AddRobot();
         }
-
-        //Gala code
         private void BtnFiveFingers_Click(object sender, EventArgs e)
         {
             AddFiveFinger();
@@ -413,7 +395,7 @@ namespace CookieClicker
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.Clear(Color.White);
+            e.Graphics.Clear(Color.FromArgb(57, 89, 130));
             fallDoc.Draw(e.Graphics);
 
         }

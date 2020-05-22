@@ -38,3 +38,13 @@ C:\Users\Stefan\Documents\GitHub\CookieClicker\CookieClicker\obj\Debug\CookieCli
 C:\Users\Stefan\Documents\GitHub\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.CoreCompileInputs.cache
 C:\Users\Stefan\Documents\GitHub\CookieClicker\CookieClicker\obj\Debug\CookieClicker.exe
 C:\Users\Stefan\Documents\GitHub\CookieClicker\CookieClicker\obj\Debug\CookieClicker.pdb
+C:\Users\Stefan\Documents\Projects\stefan-krstikj\CookieClicker\CookieClicker\bin\Debug\CookieClicker.exe.config
+C:\Users\Stefan\Documents\Projects\stefan-krstikj\CookieClicker\CookieClicker\bin\Debug\CookieClicker.exe
+C:\Users\Stefan\Documents\Projects\stefan-krstikj\CookieClicker\CookieClicker\bin\Debug\CookieClicker.pdb
+C:\Users\Stefan\Documents\Projects\stefan-krstikj\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csprojAssemblyReference.cache
+C:\Users\Stefan\Documents\Projects\stefan-krstikj\CookieClicker\CookieClicker\obj\Debug\CookieClicker.Form1.resources
+C:\Users\Stefan\Documents\Projects\stefan-krstikj\CookieClicker\CookieClicker\obj\Debug\CookieClicker.Properties.Resources.resources
+C:\Users\Stefan\Documents\Projects\stefan-krstikj\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.GenerateResource.cache
+C:\Users\Stefan\Documents\Projects\stefan-krstikj\CookieClicker\CookieClicker\obj\Debug\CookieClicker.csproj.CoreCompileInputs.cache
+C:\Users\Stefan\Documents\Projects\stefan-krstikj\CookieClicker\CookieClicker\obj\Debug\CookieClicker.exe
+C:\Users\Stefan\Documents\Projects\stefan-krstikj\CookieClicker\CookieClicker\obj\Debug\CookieClicker.pdb
