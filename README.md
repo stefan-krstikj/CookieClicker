@@ -3,13 +3,13 @@
 
 ## 1. Слики од играта
 
-Initial Screen<br/>
+Main Menu<br/>
 
-![Initial Screen](https://i.imgur.com/QXYYx9Y.png "Initial Screen")
+![Main Menu](screenshots/menu.png)
 
 The Game<br/>
 
-![Game](https://i.imgur.com/JScdC4U.png "The Game")
+![Game](screenshots/game.png)
 
 
 ## 2. Game Description
